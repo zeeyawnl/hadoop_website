@@ -1,5 +1,7 @@
 'use client';
 
+import Courses from "./Courses";
+
 export default function Hero() {
   return (
     <section id="home" className="relative w-full bg-slate-50 overflow-hidden py-24 md:py-40">
@@ -40,7 +42,9 @@ export default function Hero() {
             </button>
           </div>
         </div>
+        
       </div>
+    
     </section>
   );
 }

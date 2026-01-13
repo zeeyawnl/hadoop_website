@@ -9,9 +9,8 @@ export default function Home() {
     <main className="w-full">
        < Navbar />
        < Hero />  
-       < Courses />  
+       < Courses />
        < About />  
-      
        < Contact />                                                            
     </main>
   );

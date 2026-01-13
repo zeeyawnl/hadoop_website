@@ -20,7 +20,7 @@ const courses = [
 
 export default function Courses() {
   return (
-    <section id="courses" className="pt-0 pb-10 bg-slate-50">
+    <section id="courses" className="pt-0 pb-10 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-0">
         <h2 className="text-5xl md:text-7xl font-bold text-center mb-14 mt-0 pt-0">
           Our Courses
