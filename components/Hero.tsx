@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/dist/client/link";
 import Courses from "./Courses";
 
 export default function Hero() {
@@ -37,9 +38,12 @@ export default function Hero() {
             <button className="px-10 md:px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:scale-105 transition">
               Get Started
             </button>
-            <button className="px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-medium hover:bg-gray-100 transition">
-              Learn More
-            </button>
+            <Link
+  href="/learnMore"
+  className="px-8 py-3 rounded-full border border-gray-300 text-gray-800 font-medium hover:bg-gray-100 transition"
+>
+  Learn More
+</Link>
           </div>
         </div>
         
