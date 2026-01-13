@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 flex items-center justify-center py-24 px-6">
         <div className="max-w-4xl text-center">
-          <h1 className="text-6xl md:text-6xl font-extrabold text-gray-900 leading-tight py-8 md:py-0">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight py-8 md:py-0">
             Learn Big Data
             <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent py-2 md:py-0">
               with TechCloud
