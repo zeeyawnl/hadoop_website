@@ -34,7 +34,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:scale-105 transition">
+            <button className="px-10 md:px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:scale-105 transition">
               Get Started
             </button>
             <button className="px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-medium hover:bg-gray-100 transition">
