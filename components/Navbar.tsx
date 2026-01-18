@@ -38,7 +38,7 @@ export default function Navbar() {
   className="object-contain"
 />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">
               TechCloud
             </span>
           </Link>

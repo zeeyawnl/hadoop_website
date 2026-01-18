@@ -10,7 +10,7 @@ export default function About() {
           <div>
             <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
               About
-              <span className="block text-5xl md:text-8xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="block text-5xl md:text-8xl bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
                 TechCloud
               </span>
             </h2>

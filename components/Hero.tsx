@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="max-w-4xl text-center mt-4 md:mt-0">
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight py-12 md:py-0">
             Learn Big Data
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent py-2 md:py-0">
+            <span className="block bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent py-2 md:py-0">
               with TechCloud
             </span>
           </h1>
