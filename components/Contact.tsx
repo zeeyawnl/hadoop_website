@@ -12,7 +12,11 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false);
 
-const handleSubmit = async (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  console.log("SUBMIT CLICKED", form);
+
   e.preventDefault();
 
   if (!form.name || !form.email || !form.course || !form.message) {
