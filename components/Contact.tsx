@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export default function Contact() {
+   console.log("CONTACT COMPONENT RENDERED");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -17,35 +18,27 @@ export default function Contact() {
   e.preventDefault();
   console.log("SUBMIT CLICKED", form);
 
-  e.preventDefault();
-
-  if (!form.name || !form.email || !form.course || !form.message) {
-    alert("All fields are required");
-    return;
-  }
-
   setLoading(true);
 
   try {
     const res = await fetch("/api/contact", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
 
-    if (!res.ok) throw new Error("Submission failed");
+    const data = await res.json();
+    console.log("API RESPONSE:", data);
 
     alert("Message submitted successfully");
     setForm({ name: "", email: "", course: "", message: "" });
-
-  } catch (err) {
-    alert("Something went wrong. Try again.");
+  } catch {
+    alert("Something went wrong");
   } finally {
     setLoading(false);
   }
 };
+
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
   setForm({ ...form, [e.target.name]: e.target.value });
@@ -67,28 +60,32 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl space-y-6 border">
 
           <input
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Full Name"
-            className="w-full border px-4 py-3 rounded-lg"
-          />
+  name="name"
+  required
+  value={form.name}
+  onChange={handleChange}
+  placeholder="Full Name"
+  className="w-full border px-4 py-3 rounded-lg"
+/>
 
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Email"
-            className="w-full border px-4 py-3 rounded-lg"
-          />
+<input
+  type="email"
+  name="email"
+  required
+  value={form.email}
+  onChange={handleChange}
+  placeholder="Email"
+  className="w-full border px-4 py-3 rounded-lg"
+/>
 
-          <select 
-            name="course"
-            value={form.course}
-            onChange={handleChange}
-            className="w-full border px-4 py-3 rounded-lg"
-          >
+<select
+  name="course"
+  required
+  value={form.course}
+  onChange={handleChange}
+  className="w-full border px-4 py-3 rounded-lg"
+>
+
             <option value="">Select Course</option>
             <option value="Hadoop">Hadoop</option>
             <option value="AWS">AWS</option>
@@ -96,22 +93,25 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
             <option value="Machine Learning">Machine Learning</option>
           </select>
 
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Your requirement"
-            rows={4}
-            className="w-full border px-4 py-3 rounded-lg"
-          />
+         <textarea
+  name="message"
+  required
+  value={form.message}
+  onChange={handleChange}
+  placeholder="Your requirement"
+  rows={4}
+  className="w-full border px-4 py-3 rounded-lg"
+/>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold disabled:opacity-60"
-          >
-            {loading ? "Submitting..." : "Submit"}
-          </button>
+
+         <button
+  type="submit"
+  disabled={loading}
+  className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold disabled:opacity-60"
+>
+  {loading ? "Submitting..." : "Submit"}
+</button>
+
         </form>
       </div>
     </section>
